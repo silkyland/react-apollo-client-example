@@ -48,6 +48,7 @@ const User = props => {
                     <Label>ชื่อผู้ใช้: </Label>
                     <Input
                       type="text"
+                      value={input.username}
                       name="username"
                       required
                       placeholder="กรอกชื่อผู้ใช้"
@@ -57,6 +58,7 @@ const User = props => {
                     <Label>ชื่อ-สกุล: </Label>
                     <Input
                       type="text"
+                      value={input.name}
                       name="name"
                       required
                       placeholder="กรอกชื่อผู้ใช้"
@@ -66,6 +68,7 @@ const User = props => {
                     <Label>อีเมล์: </Label>
                     <Input
                       type="email"
+                      value={input.name}
                       name="email"
                       required
                       placeholder="กรอกอีเมล์"
@@ -75,6 +78,7 @@ const User = props => {
                     <Label>พาสเวิร์ด: </Label>
                     <Input
                       type="password"
+                      value={input.name}
                       name="password"
                       required
                       placeholder="กรอกพาสเวิร์ด"
@@ -84,6 +88,7 @@ const User = props => {
                     <Label>พาสเวิร์ด: </Label>
                     <Input
                       type="password"
+                      value={input.name}
                       name="password_confirmation"
                       required
                       placeholder="กรอกพาสเวิร์ดอีกครั้ง"
