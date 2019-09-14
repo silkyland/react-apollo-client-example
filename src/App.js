@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { GET_USERS } from "./client/query/user";
+import { Query } from "@apollo/react-components";
+import Skeleton from "react-loading-skeleton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Query query={GET_USERS}>
+      {({ loading, error, data }) => {
+        if (loading) return <Skeleton count={5} />;
+        if (error) return <p>{error.message}</p>;
+        const { users } = data;
+        return (
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <ul>
+                {users.map(user => (
+                  <li key={user.id}>
+                    {user.name} || {user.email}
+                  </li>
+                ))}
+              </ul>
+            </header>
+          </div>
+        );
+      }}
+    </Query>
   );
 }
 
