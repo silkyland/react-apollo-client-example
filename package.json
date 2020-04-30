@@ -7,7 +7,7 @@
     "apollo-boost": "^0.4.4",
     "bootstrap": "^4.3.1",
     "graphql": "^14.5.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-loading-skeleton": "^1.1.2",
